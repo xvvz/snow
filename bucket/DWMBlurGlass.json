@@ -1,0 +1,23 @@
+{
+    "version": "1.0.4",
+    "description": "Add blur effect to global system title bar, support win10 and win11.",
+    "homepage": "https://github.com/Maplespe/DWMBlurGlass",
+    "license": "LGPL-3.0, GPL-3.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Maplespe/DWMBlurGlass/releases/download/Release/Release_x64.zip",
+            "hash": "18306cf1a6479a3ff2f35416cc25bcfb010c94bfa14005f680080a603a69f854"
+        }
+    },
+    "bin": "Release\\DWMBlurGlass.exe",
+    "shortcuts": [["Release\\DWMBlurGlass.exe", "DWMBlurGlass"]],
+    "persist": "config.ini",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Maplespe/DWMBlurGlass/releases/download/$version/Release_x64.zip"
+            }
+        }
+    }
+}

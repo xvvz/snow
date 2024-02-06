@@ -1,0 +1,39 @@
+{
+    "version": "3.12.3",
+    "description": "小白羊网盘 - Powered by 阿里云盘。",
+    "homepage": "https://github.com/gaozhangmin/aliyunpan",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v3.12.3/XBYDriver-3.12.3-win-x64.exe",
+            "hash": "efd6fa716b2a4f503571191321bc22dea6a4fbac72e4a345c97f762f1995b726"
+        }
+    },
+    "pre_install": "if (!(is_admin)) { throw 'Administrator privileges are required' }",
+    "installer": {
+        "args": [
+            "--mode",
+            "unattended",
+            "--prefix",
+            "$dir"
+        ]
+    },
+    "bin": "xbyyunpan\\小白羊云盘.exe",
+    "shortcuts": [["xbyyunpan\\小白羊云盘.exe", "小白羊云盘"]],
+    "pre_uninstall": "if (!(is_admin)) { throw 'Administrator privileges are required' }",
+    "uninstaller": {
+        "file": "uninstall.exe",
+        "args": [
+            "--mode",
+            "unattended"
+        ]
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v$version/XBYDriver-$version-win-x64.exe"
+            }
+        }
+    }
+}

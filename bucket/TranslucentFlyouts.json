@@ -1,0 +1,20 @@
+{
+    "version": "2.1.0",
+    "description": "Translucent effect for most of the win32 flyouts",
+    "homepage": "https://github.com/ALTaleX531/TranslucentFlyouts",
+    "license": "LGPL-3.0, GPL-3.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ALTaleX531/TranslucentFlyouts/releases/download/v2.1.0/TranslucentFlyoutsV2.x64.rar",
+            "hash": "0bf78e29eadb7e5ecc926560738be4be4a51fb841f27f1f3d90ec06497f40754"
+        }
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ALTaleX531/TranslucentFlyouts/releases/download/v$version/TranslucentFlyoutsV2.x64.rar"
+            }
+        }
+    }
+}
