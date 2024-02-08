@@ -16,7 +16,6 @@
             "DWMBlurGlass"
         ]
     ],
-    "persist": "data",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
