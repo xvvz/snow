@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/Maplespe/DWMBlurGlass/releases/download/2.0.0/Release_x64.zip",
-            "hash": "c4b94132c947b3ce95757f10b23670d4720d190e31f802300aa105e99ed0077b"
+            "hash": "bbd8c480c459bca4d54fbc73ed005332babdb29bfd5209672a7b28976f37708e"
         }
     },
     "bin": "Release\\DWMBlurGlass.exe",
