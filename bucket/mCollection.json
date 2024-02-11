@@ -8,10 +8,10 @@
             "hash": "52D95314B2A70D26F9BC71D2C33801F6E2B25061AACB97CA75C7CC8D5A42449C"
         }
     },
-    "bin": "mLauncher.exe",
+    "bin": "mLauncher_win10\\mLauncher.exe",
     "shortcuts": [
         [
-            "mLauncher.exe",
+            "mLauncher_win10\\mLauncher.exe",
             "mLauncher"
         ]
     ],
