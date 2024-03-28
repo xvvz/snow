@@ -1,0 +1,42 @@
+{
+    "version": "4.1.0",
+    "description": "Wow. Yet another Pixiv client!",
+    "homepage": "https://github.com/Pixeval/Pixeval",
+    "license": "GPL-3.0 license",
+    "notes": "",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Pixeval/Pixeval/releases/download/4.1.0/Pixeval_4.1.0.0_x64.exe",
+            "hash": "d511dc58a41eb365369d4df849d65e92d7574aa8927716884f8cbacbfec12e9f"
+        },
+        "32bit": {
+            "url": "https://github.com/Pixeval/Pixeval/releases/download/4.1.0/Pixeval_4.1.0.0_x86.exe",
+            "hash": "159e2738181374b08048a946e1ea0b8c915999a9738db9c0496059a6752681dd"
+        },
+        "arm64": {
+            "url": "https://github.com/Pixeval/Pixeval/releases/download/4.1.0/Pixeval_4.1.0.0_arm64.exe",
+            "hash": "7e7a27aef476376f776005e3cc055b836c3b73c343fd54153fcd2704e0596419"
+        }
+    },
+    "bin": "Pixeval.exe",
+    "shortcuts": [
+        [
+            "Pixeval.exe",
+            "Pixeval"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Pixeval/Pixeval/releases/download/$version/Pixeval_$version.0_x64.exe"
+            },
+            "32bit": {
+                "url": "https://github.com/Pixeval/Pixeval/releases/download/$version/Pixeval_$version.0_x86.exe"
+            },
+            "arm64": {
+                "url": "https://github.com/Pixeval/Pixeval/releases/download/$version/Pixeval_$version.0_arm64.exe"
+            }
+        }
+    }
+}
