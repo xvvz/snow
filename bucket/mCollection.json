@@ -1,0 +1,26 @@
+{
+    "version": "1.0.1",
+    "description": "开源模组化可扩展的素材管理软件",
+    "homepage": "https://github.com/hunmer/mCollection",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/hunmer/mCollection/releases/download/1.0.1/mLauncher_win10.zip",
+            "hash": "1395E2AFD85DF16DA37CF8D002FF70C64F653BB963A157F71035B1C67D21D135"
+        }
+    },
+    "bin": "mLauncher_win10\\mLauncher.exe",
+    "shortcuts": [
+        [
+            "mLauncher_win10\\mLauncher.exe",
+            "mLauncher"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/hunmer/mCollection/releases/download/$version/mLauncher_win10.zip"
+            }
+        }
+    }
+}
