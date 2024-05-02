@@ -9,10 +9,10 @@
             "hash": "ff9614716482ca377d40563d2d6fa8d6bfeb93202d34d3abe875b7ed57cc59b7"
         }
     },
-    "bin": "Reader Desktop.exe",
+    "bin": "PFiles/Reader Desktop/Reader Desktop.exe",
     "shortcuts": [
         [
-            "Reader Desktop.exe",
+            "PFiles/Reader Desktop/Reader Desktop.exe",
             "Reader Desktop"
         ]
     ],
