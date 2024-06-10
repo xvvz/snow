@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/peanut996/CloudflareWarpSpeedTest/releases/download/v1.4.2/CloudflareWarpSpeedTest-v1.4.2-windows-amd64.zip",
-            "hash": "340a28566bd4d4d13dfc1c05035fbff48db5b26857bdbb21d7fca681712cb55c"
+            "hash": "b2ad99514d87e5c377e118e3552f67a5568c20c07fe5418cda0f56b4824882c4"
         }
     },
     "bin": "CloudflareWarpSpeedTest.exe",
