@@ -9,7 +9,7 @@
             "hash": "2d18a949ba908840690941431729d509326f10cfc1a891ea26de8441238a7169"
         }
     },
-    "extract_dir": "ProxyPin",
+    "extract_dir": "ProxyPin-Windows",
     "shortcuts": [
         [
             "ProxyPin.exe",
