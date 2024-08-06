@@ -11,7 +11,7 @@
     },
     "shortcuts": [
         [
-            "Release\ProxyPin.exe",
+            "ProxyPin/ProxyPin.exe",
             "ProxyPin"
         ]
     ],
