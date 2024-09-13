@@ -1,12 +1,12 @@
 {
     "homepage": "https://github.com/peanut996/CloudflareWarpSpeedTest",
     "description": "A tool for testing Cloudflare WARP speed",
-    "version": "1.5.3",
+    "version": "1.5.4",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/peanut996/CloudflareWarpSpeedTest/releases/download/v1.5.3/CloudflareWarpSpeedTest-v1.5.3-windows-amd64.zip",
-            "hash": "a94eb57b832a2a7bf69fd074e6eea9ce6900d2e726cf058e028081e0a5ab7eb8"
+            "url": "https://github.com/peanut996/CloudflareWarpSpeedTest/releases/download/v1.5.4/CloudflareWarpSpeedTest-v1.5.4-windows-amd64.zip",
+            "hash": "046c4bce0cab8b00c693270d3cac98cfa56386600467a76c24a88dc449ed9d54"
         }
     },
     "bin": "CloudflareWarpSpeedTest.exe",
