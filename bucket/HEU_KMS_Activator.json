@@ -1,0 +1,21 @@
+{
+    "version": "42.2.0",
+    "description": "HEU_KMS_Activator",
+    "homepage": "https://github.com/zbezj/HEU_KMS_Activator",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/zbezj/HEU_KMS_Activator/releases/download/42.2.0/HEU_KMS_Activator_v42.2.0.rar",
+            "hash": "b5851baca860547c4848dc29b48fb1bbb463c6536ea6b0240134aad9ad62ac41"
+        }
+    },
+    "bin": "HEU_KMS_Activator_v42.2.0.exe",
+    "shortcuts": [["HEU_KMS_Activator_v42.2.0.exe", "HEU_KMS_Activator"]],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/zbezj/HEU_KMS_Activator/releases/download/$version/HEU_KMS_Activator_v42.2.0.rar"
+            }
+        }
+    }
+}
