@@ -16,6 +16,7 @@
             "DWMBlurGlass"
         ]
     ],
+    "persist": "Release\\data\\config.ini",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
