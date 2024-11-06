@@ -21,7 +21,7 @@
             "DWMBlurGlass"
         ]
     ],
-    "bin": "Release\\DWMBlurGlass.exe",
+    "bin": "DWMBlurGlass.exe",
     "persist": [
         "data\\config.ini",
         "data\\symbols"
