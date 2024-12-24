@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/hectorqin/reader/releases/download/v3.2.12/Reader.Desktop_3.2.12_x64_zh-CN.msi",
-            "hash": "44c2391ba642d2348df74e1095b25e658a8a0afef3d820003c8f11df4d3c9ac2"
+            "hash": "7c96f7269f6996b6f3fb2c13fddb88e845517eae555d7ff10a1a92e1f4a23e05"
         }
     },
     "bin": "PFiles/Reader Desktop/Reader Desktop.exe",
