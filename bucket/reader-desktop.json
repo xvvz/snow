@@ -1,12 +1,12 @@
 {
-    "version": "3.2.13",
+    "version": "3.2.14",
     "description": "阅读3服务器版",
     "homepage": "https://github.com/hectorqin/reader",
     "license": "GPL-3.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/hectorqin/reader/releases/download/v3.2.13/Reader.Desktop_3.2.13_x64_zh-CN.msi",
-            "hash": "eabc36f230237a1984ba2c980699bd6d1c25586159c71bb4ee7ce5a1fe4d9c17"
+            "url": "https://github.com/hectorqin/reader/releases/download/v3.2.14/Reader.Desktop_3.2.14_x64_zh-CN.msi",
+            "hash": "8eb418cd6acf2e19a762bbc8deaba6d9cf05a293c48fea5803c40968ec8158a9"
         }
     },
     "bin": "PFiles/Reader Desktop/Reader Desktop.exe",
