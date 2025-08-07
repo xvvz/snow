@@ -9,6 +9,11 @@
             "hash": "bc8f24dd4ac8fe616091c5a20eb3e8ac8cb00766"
         }
     },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\data\\config.ini\")) { Set-Content -Encoding ASCII -Path \"$dir\\data\\config.ini\" -Value $null }",
+        "if ($env:CI -eq \"true\") { return }",
+        "if (!$global -and $scoopdir.StartsWith([System.Environment]::GetFolderPath('UserProfile'))) { error \"Note that because DWM is running in a sandbox, this application must be placed in a non-user directory.\"; error \"Please reinstall $app globally: sudo scoop install $bucket/$app --global\"; Exit }"
+    ],
     "extract_dir": "Release",
     "shortcuts": [
         [
