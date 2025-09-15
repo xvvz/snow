@@ -4,7 +4,7 @@
     "homepage": "https://github.com/hunmer/mCollection",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/hunmer/mCollection/releases/download/1.0.1/mLauncher_win10.zip",
+            "url": "https://github.com/hunmer/mCollection/releases/download/1.0.1/mLauncher_win10.rar",
             "hash": "d83a953c8a1a4c6102f0c106cce2865ef7bbd359b728113d1d74d1fa174986cd"
         }
     },
@@ -19,8 +19,9 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/hunmer/mCollection/releases/download/$version/mLauncher_win10.zip"
+                "url": "https://github.com/hunmer/mCollection/releases/download/$version/mLauncher_win10.rar"
             }
         }
     }
 }
+
