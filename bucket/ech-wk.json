@@ -1,7 +1,7 @@
 {
     "homepage": "https://github.com/byJoey/ech-wk",
     "description": "跨平台的 ECH Workers 代理客户端，支持 Windows、macOS 和 Linux（ARM/x86），提供图形界面和命令行两种使用方式。",
-    "version": "v1.4",
+    "version": "1.4",
     "architecture": {
         "64bit": {
             "url": "https://github.com/byJoey/ech-wk/releases/download/v1.4/ECHWorkers-windows-amd64.zip",
