@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.19_250523_x64_01.exe#/dl.7z",
-            "hash": "d52601a3224d29364f03f4948a487ecd2710db1921383730801d795397e0a808"
+            "hash": "0174f703d02d8389f3228e6aa39aacf9688b5ac31a7d8aa2ebb1afd1a7c3ade7"
         },
     },
     "extract_dir": "Files",
