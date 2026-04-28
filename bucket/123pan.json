@@ -1,0 +1,69 @@
+{
+    "version": "3.1.4.0",
+    "description": "123云盘 - 免费高速云存储客户端",
+    "homepage": "https://www.123pan.com/",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.123pan.com/UserAgreement"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://app.123957.com/pc-pro/windows/314/123pan_3.1.4.exe",
+            "hash": "c23d209ae2df7865d2d8881f65e64c7252b948504ca12d474115dbc0fd8e51b3"
+        }
+    },
+    "installer": {
+        "script": [
+            "$installer = \"$dir\\$fname\"",
+            "$installPath = \"$dir\\app\"",
+            "if (-not (Test-Path $installer)) { throw \"安装包不存在：$installer\" }",
+            "$arguments = @('/VERYSILENT', '/NORESTART', '/DIR=$installPath')",
+            "$process = Start-Process -FilePath $installer -ArgumentList $arguments -Wait -PassThru -NoNewWindow",
+            "if ($process.ExitCode -notin 0, 1641, 3010) { throw \"安装失败，退出代码：$($process.ExitCode)\" }",
+            "if (-not (Test-Path \"$installPath\\123pan.exe\")) { throw \"安装后未找到主程序 123pan.exe\" }",
+            "Remove-Item $installer -Force -ErrorAction SilentlyContinue"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "$uninstaller = \"$dir\\app\\unins000.exe\"",
+            "if (Test-Path $uninstaller) {",
+            "    $process = Start-Process -FilePath $uninstaller -ArgumentList @('/VERYSILENT','/NORESTART') -Wait -PassThru -NoNewWindow",
+            "    if ($process.ExitCode -notin 0,1641,3010) { Write-Warning \"卸载程序退出代码：$($process.ExitCode)\" }",
+            "}",
+            "if (Test-Path \"$dir\\app\") {",
+            "    Remove-Item \"$dir\\app\" -Recurse -Force -ErrorAction SilentlyContinue",
+            "}"
+        ]
+    },
+    "bin": [
+        "app\\123pan.exe"
+    ],
+    "shortcuts": [
+        [
+            "app\\123pan.exe",
+            "123云盘"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.123pan.com/",
+        "regex": "pc-pro/windows/(\\d+)/123pan_([\\d.]+)\\.exe",
+        "reverse": true
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://app.123957.com/pc-pro/windows/$match1/123pan_$version.exe"
+            }
+        },
+        "hash": {
+            "mode": "download"
+        }
+    },
+    "notes": [
+        "123云盘安装完成",
+        "命令行启动: 123pan",
+        "用户数据: %APPDATA%\\123pan",
+        "缓存数据: %LOCALAPPDATA%\\123pan"
+    ]
+}
