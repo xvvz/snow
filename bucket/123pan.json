@@ -18,24 +18,26 @@
     "installer": {
         "script": [
             "$installDir = Join-Path $dir \"app\"",
-            "$tempDir = Join-Path $dir \"tmp\"",
-            "$exe = Join-Path $dir $fname",
-            "New-Item -Path $installDir,$tempDir -ItemType Directory -Force | Out-Null",
-            "$null = & $exe /s /extract:$tempDir",
-            "7z x \"$tempDir\\*.7z\" -o\"$installDir\" -y -s | Out-Null",
-            "Remove-Item $tempDir -Recurse -Force -ErrorAction SilentlyContinue",
-            "if (-not (Test-Path (Join-Path $installDir \"123pan.exe\"))) { throw \"解压失败\" }"
+            "$exePath = Join-Path $dir $fname",
+            "New-Item -Path $installDir -ItemType Directory -Force | Out-Null",
+            "Start-Process \"$exePath\" -ArgumentList \"/VERYSILENT\", \"/NORESTART\", \"/DIR=`\"$installDir`\"\" -Wait -NoNewWindow",
+            "if (-not (Test-Path (Join-Path $installDir \"123pan.exe\"))) { throw \"安装失败：未找到主程序\" }"
         ]
     },
     "uninstaller": {
         "script": [
+            "$uninstallExe = Join-Path $dir \"app\\unins000.exe\"",
+            "if (Test-Path $uninstallExe) {",
+            "    Start-Process \"$uninstallExe\" -ArgumentList \"/VERYSILENT\", \"/NORESTART\", \"/SUPPRESSMSGBOXES\" -Wait -NoNewWindow",
+            "}",
             "$appDir = Join-Path $dir \"app\"",
             "Remove-Item $appDir -Recurse -Force -ErrorAction SilentlyContinue"
         ]
     },
     "bin": ["app\\123pan.exe"],
-    "shortcuts": [["app\\123pan.exe", "123云盘"]],
-    "persist": "data",
+    "shortcuts": [
+        ["app\\123pan.exe", "123云盘"]
+    ],
     "checkver": {
         "url": "https://www.123pan.com/",
         "regex": "pc-pro/windows/(\\d+)/123pan_([\\d.]+)\\.exe"
@@ -46,12 +48,14 @@
                 "url": "https://app.123957.com/pc-pro/windows/$match1/123pan_$version.exe"
             }
         },
-        "hash": {"mode": "download"}
+        "hash": {
+            "mode": "download"
+        }
     },
     "notes": [
-        "✅ 纯静默安装/卸载，无任何弹窗",
-        "✅ 程序完整隔离在Scoop目录",
-        "✅ 个人数据独立保留，卸载不丢失",
-        "✅ 启动命令：123pan"
+        "✅ 安装/卸载 完全静默无弹窗",
+        "✅ 自动安装到 Scoop 目录",
+        "✅ 无需手动点击、无需选路径",
+        "✅ 卸载只删程序，不删用户数据"
     ]
 }
