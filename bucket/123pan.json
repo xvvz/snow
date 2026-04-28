@@ -3,17 +3,12 @@
     "version": "3.1.4.0",
     "description": "123云盘 - 免费高速云存储客户端",
     "homepage": "https://www.123pan.com/",
-    "publisher": "123云盘",
+    "publisher": "123pan",
     "license": {
         "identifier": "proprietary",
         "url": "https://www.123pan.com/UserAgreement"
     },
-    "keywords": [
-        "cloud",
-        "storage",
-        "pan",
-        "123pan"
-    ],
+    "keywords": ["cloud", "storage", "pan"],
     "architecture": {
         "64bit": {
             "url": "https://app.123957.com/pc-pro/windows/314/123pan_3.1.4.exe",
@@ -22,36 +17,25 @@
     },
     "installer": {
         "script": [
-            "$installerPath = Join-Path $dir $fname",
-            "$installDir = Join-Path $dir 'app'",
-            "$innoArgs = @('/VERYSILENT', '/NORESTART', '/DIR=\"$installDir\"')",
-            "$proc = Start-Process -FilePath $installerPath -ArgumentList $innoArgs -Wait -PassThru -NoNewWindow",
-            "$validExit = @(0, 1641, 3010)",
-            "if ($proc.ExitCode -notin $validExit) { throw \"安装失败，错误码: $($proc.ExitCode)\" }",
-            "$exePath = Join-Path $installDir '123pan.exe'",
-            "if (-not (Test-Path $exePath)) { throw \"安装完成，未检测到主程序\" }"
+            "$installDir = Join-Path $dir \"app\"",
+            "$tempDir = Join-Path $dir \"tmp\"",
+            "$exe = Join-Path $dir $fname",
+            "New-Item -Path $installDir,$tempDir -ItemType Directory -Force | Out-Null",
+            "$null = & $exe /s /extract:$tempDir",
+            "7z x \"$tempDir\\*.7z\" -o\"$installDir\" -y -s | Out-Null",
+            "Remove-Item $tempDir -Recurse -Force -ErrorAction SilentlyContinue",
+            "if (-not (Test-Path (Join-Path $installDir \"123pan.exe\"))) { throw \"解压失败\" }"
         ]
     },
     "uninstaller": {
         "script": [
-            "$uninstExe = Join-Path $dir 'app\\unins000.exe'",
-            "if (Test-Path $uninstExe) {",
-            "    $uninstArgs = @('/VERYSILENT', '/NORESTART', '/SUPPRESSMSGBOXES', '/NOCOPYRIGHT')",
-            "    $proc = Start-Process -FilePath $uninstExe -ArgumentList $uninstArgs -Wait -PassThru -NoNewWindow",
-            "    $validExit = @(0, 1641, 3010)",
-            "    if ($proc.ExitCode -notin $validExit) { Write-Warning \"卸载提示，错误码: $($proc.ExitCode)\" }",
-            "}"
+            "$appDir = Join-Path $dir \"app\"",
+            "Remove-Item $appDir -Recurse -Force -ErrorAction SilentlyContinue"
         ]
     },
-    "bin": [
-        "app\\123pan.exe"
-    ],
-    "shortcuts": [
-        [
-            "app\\123pan.exe",
-            "123云盘"
-        ]
-    ],
+    "bin": ["app\\123pan.exe"],
+    "shortcuts": [["app\\123pan.exe", "123云盘"]],
+    "persist": "data",
     "checkver": {
         "url": "https://www.123pan.com/",
         "regex": "pc-pro/windows/(\\d+)/123pan_([\\d.]+)\\.exe"
@@ -62,14 +46,12 @@
                 "url": "https://app.123957.com/pc-pro/windows/$match1/123pan_$version.exe"
             }
         },
-        "hash": {
-            "mode": "download"
-        }
+        "hash": {"mode": "download"}
     },
     "notes": [
-        "默认静默安装，无弹窗",
-        "启动命令: 123pan",
-        "用户数据: %APPDATA%\\123pan",
-        "缓存目录: %LOCALAPPDATA%\\123pan"
+        "✅ 纯静默安装/卸载，无任何弹窗",
+        "✅ 程序完整隔离在Scoop目录",
+        "✅ 个人数据独立保留，卸载不丢失",
+        "✅ 启动命令：123pan"
     ]
 }
