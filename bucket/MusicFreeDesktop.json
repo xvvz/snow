@@ -5,7 +5,7 @@
     "license": "GPL-3.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/maotoumao/MusicFreeDesktop/releases/download/v0.0.8/MusicFree-0.0.8-win32-x64-portable.zip",
+            "url": "https://github.com/maotoumao/MusicFreeDesktop/releases/download/v0.0.8/MusicFree-0.0.8-win32-x64-legacy-setup.exe#/dl.7z",
             "hash": "b84ef7feced17a95dd704db9968867726008d782619d511656e5ece059951399"
         }
     },
@@ -16,36 +16,22 @@
             "MusicFree"
         ]
     ],
-    "installer": {
+     "pre_install": [
+        "Expand-7zipArchive \"$dir\\app.7z\" \"$dir\"",
+        "Remove-Item \"$dir\\`$PLUGINSDIR\",\"$dir\\app.7z\" -Force -Recurse"
+    ],
+    "uninstaller": {
         "script": [
-            "# 找到下载的原始 zip 文件",
-            "$originalZip = Get-ChildItem \"$dir\\*.zip\" | Select-Object -First 1",
-            "if ($originalZip) {",
-            "    Expand-Archive -Path $originalZip.FullName -DestinationPath \"$dir\" -Force",
-            "    Remove-Item -Path $originalZip.FullName -Force",
-            "}",
-            "",
-            "# 递归解压所有嵌套的 zip 文件（直到没有 zip 为止）",
-            "while ($zip = Get-ChildItem -Path \"$dir\" -Recurse -Filter *.zip | Select-Object -First 1) {",
-            "    $dest = $zip.DirectoryName",
-            "    Expand-Archive -Path $zip.FullName -DestinationPath $dest -Force",
-            "    Remove-Item -Path $zip.FullName -Force",
-            "}",
-            "",
-            "# 如果解压后只有一个顶级文件夹，把里面的内容上移到 $dir 根目录",
-            "$items = Get-ChildItem -Path $dir -Force",
-            "if ($items.Count -eq 1 -and $items[0].PSIsContainer) {",
-            "    $subDir = $items[0]",
-            "    Get-ChildItem -Path $subDir.FullName -Force | Move-Item -Destination $dir -Force",
-            "    Remove-Item -Path $subDir.FullName -Force",
-            "}"
+            "$runtimeCache = \"$env:APPDATA\\123pan\"",
+            "Write-Host \"`nRemoving RuntimeCacheCache:$runtimeCache\"",
+            "Remove-Item $runtimeCache -Force -Recurse -ErrorAction SilentlyContinue"
         ]
     },
     "checkver": "github",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/maotoumao/MusicFreeDesktop/releases/download/v$version/MusicFree-$version-win32-x64-portable.zip"
+                "url": "https://github.com/maotoumao/MusicFreeDesktop/releases/download/v$version/MusicFree-$version-win32-x64-legacy-setup.exe"
             }
         }
     }
