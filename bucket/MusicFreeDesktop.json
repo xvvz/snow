@@ -16,6 +16,13 @@
             "MusicFree"
         ]
     ],
+    "installer": {
+        "script": [
+            "Expand-Archive -Path $dir\\$fname -DestinationPath $dir -Force",
+            "Get-ChildItem -Path $dir -Filter *.zip | Select-Object -First 1 | ForEach-Object { Expand-Archive -Path $_.FullName -DestinationPath $dir -Force }",
+            "Remove-Item -Path $dir\\*.zip -Force -ErrorAction SilentlyContinue"
+        ]
+    },
     "checkver": "github",
     "autoupdate": {
         "architecture": {
