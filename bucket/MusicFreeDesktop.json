@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/maotoumao/MusicFreeDesktop/releases/download/v0.0.8/MusicFree-0.0.8-win32-x64-legacy-setup.exe#/dl.7z",
-            "hash": "b84ef7feced17a95dd704db9968867726008d782619d511656e5ece059951399"
+            "hash": "91671757471a08addd3bbcb06feefce9434cda5de3f9501e40762be91e9525cb"
         }
     },
     "bin": "MusicFree.exe",
