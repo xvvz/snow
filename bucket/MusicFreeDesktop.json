@@ -5,7 +5,7 @@
     "license": "GPL-3.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/maotoumao/MusicFreeDesktop/releases/download/v0.0.8/MusicFree-0.0.8-win32-x64-legacy-setup.exe#/dl.7z",
+            "url": "https://github.com/maotoumao/MusicFreeDesktop/releases/download/v0.0.8/MusicFree-0.0.8-win32-x64-legacy-setup.exe",
             "hash": "91671757471a08addd3bbcb06feefce9434cda5de3f9501e40762be91e9525cb"
         }
     },
@@ -13,20 +13,10 @@
     "shortcuts": [
         [
             "MusicFree.exe",
-            "MusicFree"
+            "MusicFre
         ]
     ],
-    "pre_install": [
-        "Expand-7zipArchive \"$dir\\app.7z\" \"$dir\"",
-        "Remove-Item \"$dir\\`$PLUGINSDIR\",\"$dir\\app.7z\" -Force -Recurse"
-    ],
-    "uninstaller": {
-        "script": [
-            "$runtimeCache = \"$env:APPDATA\\123pan\"",
-            "Write-Host \"`nRemoving RuntimeCacheCache:$runtimeCache\"",
-            "Remove-Item $runtimeCache -Force -Recurse -ErrorAction SilentlyContinue"
-        ]
-    },
+    "innosetup":true,
     "checkver": "github",
     "autoupdate": {
         "architecture": {
