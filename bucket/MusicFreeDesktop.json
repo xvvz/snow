@@ -16,7 +16,7 @@
             "MusicFree"
         ]
     ],
-     "pre_install": [
+    "pre_install": [
         "Expand-7zipArchive \"$dir\\app.7z\" \"$dir\"",
         "Remove-Item \"$dir\\`$PLUGINSDIR\",\"$dir\\app.7z\" -Force -Recurse"
     ],
