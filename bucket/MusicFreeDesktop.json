@@ -18,9 +18,24 @@
     ],
     "installer": {
         "script": [
-            "Expand-Archive -Path $dir\\$fname -DestinationPath $dir -Force",
-            "Get-ChildItem -Path $dir -Filter *.zip | Select-Object -First 1 | ForEach-Object { Expand-Archive -Path $_.FullName -DestinationPath $dir -Force }",
-            "Remove-Item -Path $dir\\*.zip -Force -ErrorAction SilentlyContinue"
+            "# 解压原始下载的zip",
+            "Expand-Archive -Path \"$dir\\$fname\" -DestinationPath \"$dir\" -Force",
+            "Remove-Item -Path \"$dir\\$fname\" -Force",
+            "",
+            "# 递归解压所有嵌套的zip文件（双层或多层）",
+            "while ($zip = Get-ChildItem -Path \"$dir\" -Recurse -Filter *.zip | Select-Object -First 1) {",
+            "    $dest = $zip.DirectoryName",
+            "    Expand-Archive -Path $zip.FullName -DestinationPath $dest -Force",
+            "    Remove-Item -Path $zip.FullName -Force",
+            "}",
+            "",
+            "# 如果解压后只有一个顶级文件夹，将内容上移到根目录，保证MusicFree.exe位于$dir下",
+            "$items = Get-ChildItem -Path $dir -Force",
+            "if ($items.Count -eq 1 -and $items[0].PSIsContainer) {",
+            "    $subDir = $items[0]",
+            "    Get-ChildItem -Path $subDir.FullName -Force | Move-Item -Destination $dir -Force",
+            "    Remove-Item -Path $subDir.FullName -Force",
+            "}"
         ]
     },
     "checkver": "github",
