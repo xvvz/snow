@@ -1,0 +1,13 @@
+{
+    "version": "3.0",
+    "description": "编辑 Win+X 菜单",
+    "homepage": "https://winaero.com/winx-menu-editor-v3-0/",
+    "architecture": {
+        "64bit": {
+            "url": "https://winaero.com/downloads/WinXMenuEditorRelease.zip",
+            "hash": "9d98805a765d7dbbb80db70440ce94d3b91b87d019dba408917df9b5a7649d3b"
+        }
+    },
+    "bin": "WinXEditor.exe",
+    "shortcuts": [["WinXEditor.exe", "WinXEditor"]],
+}

@@ -1,0 +1,22 @@
+{
+    "version": "4.1.11",
+    "description": "Xray,V2ray，Trojan，NaiveProxy, Trojan-Go, ShadowsocksR(SSR),Shadowsocks-libev及相关插件,MTProto+TLS 一键安装工具，windows下用（一键科学上网）",
+    "homepage": "https://github.com/proxysu/ProxySU",
+    "license": "GPL-3.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/proxysu/ProxySU/releases/download/v4.1.11/ProsySU.zip",
+            "hash": "c77a6fa6e206da8c6514e4e5444e06916e1d44bedde713c991d270b465035280"
+        }
+    },
+    "bin": "ProsySU\\ProxySuper.WPF.exe",
+    "shortcuts": [["ProsySU\\ProxySuper.WPF.exe", "ProsySU"]],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/proxysu/ProxySU/releases/download/v$version/ProsySU.zip"
+            }
+        }
+    }
+}
