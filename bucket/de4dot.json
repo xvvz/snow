@@ -1,0 +1,27 @@
+{
+    "version": "3.2.0",
+    "description": ".NET deobfuscator and unpacker",
+    "homepage": "https://github.com/kant2002/de4dot",
+    "license": "GPL-3.0 license",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/kant2002/de4dot/releases/download/v3.2.0/de4dot-net8.0-winx64.zip",
+            "hash": "2c2fb0829962939a717261119ba0b487496104468fc23a2d8cacb8ab2f9fd4f2"
+        }
+    },
+    "bin": "de4dot.exe",
+    "shortcuts": [
+        [
+            "de4dot.exe",
+            "de4dot"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/kant2002/de4dot/releases/download/v$version/de4dot-net8.0-winx64.zip"
+            }
+        }
+    }
+}
