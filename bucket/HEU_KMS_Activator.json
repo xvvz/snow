@@ -8,7 +8,7 @@
             "hash": "04e6e467df02252794e5fee3a8935bb16beb7ee2d8f42bd144ff82e261a8d17f"
         }
     },
-    "post_install": [
+    "pre_install": [
         "Rename-Item -Path \"$dir\\HEU_KMS_Activator_v$version.exe\" -NewName \"HEU_KMS_Activator.exe\" -Force"
     ],
     "bin": "HEU_KMS_Activator.exe",
