@@ -15,7 +15,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/miru-project/miru-app/releases/download/v$version/Miru-v$version-windows.zip#/dl.7z"
+                "url": "https://github.com/miru-project/miru-app/releases/download/v$version/Miru-v$version-windows.zip"
             }
         }
     }
