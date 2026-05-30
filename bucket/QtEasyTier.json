@@ -1,0 +1,30 @@
+{
+    "version": "2.1.2",
+    "description": "基于 EasyTier、Qt 框架开发的去中心化异地组网工具，安全、可靠、低成本，支持异地组网、游戏联机、远程桌面/NAS访问",
+    "homepage": "https://qtet.myqfeng.top",
+    "license": "GPL-3.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://gitee.com/myqfeng/qt-easy-tier/releases/download/2.1.2/QtEasyTier_v2.1.2_win_amd64_normal.zip",
+            "hash": "3b18a2dd7e1d5f1f3f4f22ccc9c03c24fb7f9d5feac0f2cac7b0a3fb998db227"
+        }
+    },
+    "bin": "QtEasyTier.exe",
+    "shortcuts": [
+        [
+            "QtEasyTier.exe",
+            "QtEasyTier"
+        ]
+    ],
+    "checkver": {
+        "url": "https://gitee.com/myqfeng/qt-easy-tier/releases",
+        "regex": "releases/tag/v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://gitee.com/myqfeng/qt-easy-tier/releases/download/$version/QtEasyTier_v$version_win_amd64_normal.zip"
+            }
+        }
+    }
+}
