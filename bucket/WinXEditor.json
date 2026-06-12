@@ -2,6 +2,7 @@
     "version": "3.0",
     "description": "编辑 Win+X 菜单",
     "homepage": "https://winaero.com/winx-menu-editor-v3-0/",
+    "license": "MIT",
     "architecture": {
         "64bit": {
             "url": "https://winaero.com/downloads/WinXMenuEditorRelease.zip",
