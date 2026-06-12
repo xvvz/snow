@@ -1,0 +1,24 @@
+{
+    "version": "1.0.4",
+    "description": "Add a custom URL scheme to the Windows application to allow it to be invoked by a browser",
+    "homepage": "https://github.com/LuckyPuppy514/url-scheme-handler",
+    "architecture": {
+            "url": "https://github.com/LuckyPuppy514/url-scheme-handler/releases/download/v1.0.4/url-scheme-handler.exe",
+            "hash": "21f44fca168882963877d62da4867fc53c4d6b74df88a6ab7ac659447abfe5f1"
+    },
+    "bin": [
+        "url-scheme-handler.exe"
+    ],
+    "shortcuts": [
+        [
+            "url-scheme-handler.exe",
+            "URL Scheme Handler"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+                "url": "https://github.com/LuckyPuppy514/url-scheme-handler/releases/download/v$version/url-scheme-handler.exe"
+            },
+    }
+}
