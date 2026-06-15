@@ -1,5 +1,5 @@
 {
-    "version": "V1.1.4",
+    "version": "1.1.4",
     "description": "开源免费的跨平台抓包软件，支持手机扫码连接",
     "homepage": "https://github.com/wanghongenpin/network_proxy_flutter",
     "license": "Apache-2.0",
