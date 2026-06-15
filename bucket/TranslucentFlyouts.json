@@ -5,15 +5,15 @@
     "license": "LGPL-3.0, GPL-3.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ALTaleX531/TranslucentFlyouts/releases/download/v2.1.0/TranslucentFlyoutsV2.x64.rar",
-            "hash": "0bf78e29eadb7e5ecc926560738be4be4a51fb841f27f1f3d90ec06497f40754"
+            "url": "https://github.com/ALTaleX531/TranslucentFlyouts/releases/download/v3.1.1/TranslucentFlyouts.Win32.V3.x64.rar",
+            "hash": "2c1860599f6a5b78234279dec9e6a603ece3e62e4198f6c44dc344d7474f5990"
         }
     },
     "checkver": "github",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/ALTaleX531/TranslucentFlyouts/releases/download/v$version/TranslucentFlyoutsV2.x64.rar"
+                "url": "https://github.com/ALTaleX531/TranslucentFlyouts/releases/download/v$version/TranslucentFlyouts.Win32.V$majorVersion.x64.rar"
             }
         }
     }
